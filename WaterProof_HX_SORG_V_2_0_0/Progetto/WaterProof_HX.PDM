@@ -1,0 +1,179 @@
+[Root]
+Most Recent Package=Pacchetto di installazione standard HX
+
+
+[Package|Pacchetto di installazione standard HX|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=C:\Documents and Settings\Gianfranco\Documenti\Visual Studio Projects nuovi\WaterProof_HX_SORG_V_2_0_0\Progetto\Pacchetto
+
+[Package|Pacchetto di installazione standard HX|Configure DAO ISAMs]
+Applicable=No
+
+[Package|Pacchetto di installazione standard HX|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Pacchetto di installazione standard HX|Files Found]
+
+[Package|Pacchetto di installazione standard HX|Files Released]
+
+[Package|Pacchetto di installazione standard HX|Missing Dependency Information]
+C:\WINDOWS\system32\OWC10.DLL=
+C:\WINDOWS\system32\FM20.DLL=
+C:\WINDOWS\system32\msjro.dll=
+
+[Package|Pacchetto di installazione standard HX|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\MSCOMCTL.OCX=
+
+[Package|Pacchetto di installazione standard HX|Files Added]
+C:\Program Files\WaterProof HX\HX.mdb=
+
+[Package|Pacchetto di installazione standard HX|Files Removed]
+
+[Package|Pacchetto di installazione standard HX|Files In Project]
+C:\Documents and Settings\Gianfranco\Documenti\Visual Studio Projects nuovi\WaterProof_HX_SORG_V_2_0_0\Progetto\WaterProof_HX.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\WINDOWS\system32\vb6it.dll=Yes
+C:\Programmi\File comuni\Microsoft Shared\DAO\dao360.dll=Yes
+C:\WINDOWS\system32\msjet40.dll=Yes
+C:\WINDOWS\system32\msjter40.dll=Yes
+C:\WINDOWS\system32\msjint40.dll=Yes
+C:\WINDOWS\system32\vbajet32.dll=Yes
+C:\WINDOWS\system32\expsrv.dll=Yes
+C:\WINDOWS\system32\mswstr10.dll=Yes
+C:\WINDOWS\system32\mswdat10.dll=Yes
+C:\WINDOWS\system32\msrd2x40.dll=Yes
+C:\WINDOWS\system32\msrd3x40.dll=Yes
+C:\WINDOWS\system32\msrepl40.dll=Yes
+C:\WINDOWS\system32\msjtes40.dll=Yes
+C:\WINDOWS\system32\VB5DB.DLL=Yes
+C:\WINDOWS\system32\msjro.dll=Yes
+C:\WINDOWS\system32\COMDLG32.OCX=Yes
+C:\WINDOWS\system32\cmdlgit.dll=Yes
+C:\WINDOWS\system32\MSCOMCTL.OCX=Yes
+C:\WINDOWS\system32\mscmcit.dll=Yes
+C:\WINDOWS\system32\richtx32.ocx=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=Yes
+C:\WINDOWS\system32\rchtxit.dll=Yes
+C:\WINDOWS\system32\msadodc.ocx=Yes
+C:\WINDOWS\system32\msstdfmt.dll=Yes
+C:\WINDOWS\system32\STDFTIT.DLL=Yes
+C:\WINDOWS\system32\adodcit.dll=Yes
+C:\WINDOWS\system32\mschrt20.ocx=Yes
+C:\WINDOWS\system32\msch2it.dll=Yes
+C:\WINDOWS\system32\FM20.DLL=Yes
+C:\WINDOWS\system32\mscomct2.ocx=Yes
+C:\WINDOWS\system32\mscc2it.dll=Yes
+C:\WINDOWS\system32\MSFLXGRD.OCX=Yes
+C:\WINDOWS\system32\flxgdit.dll=Yes
+C:\WINDOWS\system32\OWC10.DLL=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\WINDOWS\system32\PICCLP32.OCX=Yes
+C:\WINDOWS\system32\PCCLPIT.DLL=Yes
+C:\WINDOWS\system32\MSCOMM32.OCX=Yes
+C:\WINDOWS\system32\MSCOMIT.DLL=Yes
+C:\WINDOWS\system32\msdatlst.ocx=Yes
+C:\WINDOWS\system32\datlsit.dll=Yes
+C:\Program Files\WaterProof HX\HX.mdb=Yes
+
+[Package|Pacchetto di installazione standard HX|Configure Registry Files]
+Applicable=No
+
+[Package|Pacchetto di installazione standard HX|Configure Remote Servers]
+Applicable=No
+
+[Package|Pacchetto di installazione standard HX|Install Locations]
+C:\Documents and Settings\Gianfranco\Documenti\Visual Studio Projects nuovi\WaterProof_HX_SORG_V_2_0_0\Progetto\WaterProof_HX.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEAUT32.DLL=$(WinSysPathSysFile)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\OLEPRO32.DLL=$(WinSysPathSysFile)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\ASYCFILT.DLL=$(WinSysPathSysFile)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\STDOLE2.TLB=$(WinSysPathSysFile)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vb6it.dll=$(WinSysPath)
+C:\Programmi\File comuni\Microsoft Shared\DAO\dao360.dll=$(MSDAOPath)
+C:\WINDOWS\system32\msjet40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msjter40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msjint40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\mswstr10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\mswdat10.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msrd2x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msrd3x40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msrepl40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\msjtes40.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\VB5DB.DLL=$(WinSysPath)
+C:\WINDOWS\system32\msjro.dll=$(WinSysPath)
+C:\WINDOWS\system32\COMDLG32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\cmdlgit.dll=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINDOWS\system32\mscmcit.dll=$(WinSysPath)
+C:\WINDOWS\system32\richtx32.ocx=$(WinSysPath)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\RICHED32.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\system32\rchtxit.dll=$(WinSysPath)
+C:\WINDOWS\system32\msadodc.ocx=$(WinSysPath)
+C:\WINDOWS\system32\msstdfmt.dll=$(WinSysPath)
+C:\WINDOWS\system32\STDFTIT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\adodcit.dll=$(WinSysPath)
+C:\WINDOWS\system32\mschrt20.ocx=$(WinSysPath)
+C:\WINDOWS\system32\msch2it.dll=$(WinSysPath)
+C:\WINDOWS\system32\FM20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\mscomct2.ocx=$(WinSysPath)
+C:\WINDOWS\system32\mscc2it.dll=$(WinSysPath)
+C:\WINDOWS\system32\MSFLXGRD.OCX=$(WinSysPath)
+C:\WINDOWS\system32\flxgdit.dll=$(WinSysPath)
+C:\WINDOWS\system32\OWC10.DLL=$(WinSysPath)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+C:\WINDOWS\system32\PICCLP32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\PCCLPIT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMM32.OCX=$(WinSysPath)
+C:\WINDOWS\system32\MSCOMIT.DLL=$(WinSysPath)
+C:\WINDOWS\system32\msdatlst.ocx=$(WinSysPath)
+C:\WINDOWS\system32\datlsit.dll=$(WinSysPath)
+C:\Program Files\WaterProof HX\HX.mdb=$(AppPath)
+
+[Package|Pacchetto di installazione standard HX|Configure Shared Files]
+Applicable=Yes
+C:\Documents and Settings\Gianfranco\Documenti\Visual Studio Projects nuovi\WaterProof_HX_SORG_V_2_0_0\Progetto\WaterProof_HX.exe=No
+C:\Programmi\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=Yes
+C:\Program Files\WaterProof HX\HX.mdb=No
+
+[Package|Pacchetto di installazione standard HX|Distribution]
+Type=single
+Size=
+Title=WaterProof HX
+
+[Package|Pacchetto di installazione standard HX|Package]
+PackageFolder=C:\Documents and Settings\Gianfranco\Documenti\Visual Studio Projects nuovi\WaterProof_HX_SORG_V_2_0_0\Progetto\Pacchetto
+ProjectFolder=C:\Documents and Settings\Gianfranco\Documenti\Visual Studio Projects nuovi\WaterProof_HX_SORG_V_2_0_0\Progetto
+ServerSideCab=
+File1=C:\Documents and Settings\Gianfranco\Documenti\Visual Studio Projects nuovi\WaterProof_HX_SORG_V_2_0_0\Progetto\Pacchetto\setup.exe
+File2=C:\Documents and Settings\Gianfranco\Documenti\Visual Studio Projects nuovi\WaterProof_HX_SORG_V_2_0_0\Progetto\Pacchetto\Setup.Lst
+File3=C:\Documents and Settings\Gianfranco\Documenti\Visual Studio Projects nuovi\WaterProof_HX_SORG_V_2_0_0\Progetto\Pacchetto\WaterProof_HX.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz
+
+[Package|Pacchetto di installazione standard HX|IconGroups]
+Group0=WaterProof HX
+PrivateGroup0=-1
+Parent0=$(Programs)
+
+[Package|Pacchetto di installazione standard HX|WaterProof HX]
+Icon1=WaterProof_HX.exe
+Title1=WaterProof HX
+StartIn1=$(AppPath)
+Key1=Icon1

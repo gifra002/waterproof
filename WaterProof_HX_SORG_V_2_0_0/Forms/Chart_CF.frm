@@ -1,0 +1,829 @@
+VERSION 5.00
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{65E121D4-0C60-11D2-A9FC-0000F8754DA1}#2.0#0"; "mschrt20.ocx"
+Object = "{0D452EE1-E08F-101A-852E-02608C4D0BB4}#2.0#0"; "fm20.dll"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Begin VB.Form Chart_CF 
+   Caption         =   "WaterProof SSC - Steam surface condenser - Cleanliness factor trend chart "
+   ClientHeight    =   10005
+   ClientLeft      =   60
+   ClientTop       =   450
+   ClientWidth     =   14700
+   LinkTopic       =   "Form1"
+   MDIChild        =   -1  'True
+   ScaleHeight     =   10005
+   ScaleWidth      =   14700
+   Begin VB.Data Data2 
+      Caption         =   "Data2"
+      Connect         =   "Access"
+      DatabaseName    =   "C:\Condensers\Database\steam.mdb"
+      DefaultCursorType=   0  'DefaultCursor
+      DefaultType     =   2  'UseODBC
+      Exclusive       =   0   'False
+      Height          =   300
+      Left            =   360
+      Options         =   0
+      ReadOnly        =   0   'False
+      RecordsetType   =   1  'Dynaset
+      RecordSource    =   "Query_Unit"
+      Top             =   9360
+      Width           =   2595
+   End
+   Begin VB.Data Data1 
+      Caption         =   "Data1"
+      Connect         =   "Access"
+      DatabaseName    =   "C:\Condensers\Database\steam.mdb"
+      DefaultCursorType=   0  'DefaultCursor
+      DefaultType     =   2  'UseODBC
+      Exclusive       =   0   'False
+      Height          =   315
+      Left            =   240
+      Options         =   0
+      ReadOnly        =   0   'False
+      RecordsetType   =   1  'Dynaset
+      RecordSource    =   "Table1"
+      Top             =   9660
+      Width           =   2775
+   End
+   Begin VB.TextBox Plant_N 
+      BackColor       =   &H8000000F&
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000C0&
+      Height          =   315
+      Left            =   12780
+      Locked          =   -1  'True
+      TabIndex        =   27
+      Top             =   60
+      Width           =   1635
+   End
+   Begin VB.TextBox Text1 
+      Alignment       =   1  'Right Justify
+      Appearance      =   0  'Flat
+      BackColor       =   &H8000000F&
+      BorderStyle     =   0  'None
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00000080&
+      Height          =   285
+      Index           =   1
+      Left            =   12240
+      TabIndex        =   26
+      Text            =   "Plant:"
+      Top             =   120
+      Width           =   495
+   End
+   Begin VB.TextBox Text1 
+      Alignment       =   1  'Right Justify
+      Appearance      =   0  'Flat
+      BackColor       =   &H8000000F&
+      BorderStyle     =   0  'None
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00000080&
+      Height          =   285
+      Index           =   0
+      Left            =   4380
+      TabIndex        =   25
+      Text            =   "Plant:"
+      Top             =   120
+      Width           =   495
+   End
+   Begin VB.TextBox Text3 
+      BackColor       =   &H8000000F&
+      DataField       =   "PLANT_Z"
+      DataSource      =   "Data1"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000C0&
+      Height          =   315
+      Left            =   4920
+      Locked          =   -1  'True
+      TabIndex        =   24
+      Top             =   60
+      Width           =   1755
+   End
+   Begin VB.Frame Frame1 
+      Caption         =   "Scale span"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF0000&
+      Height          =   1995
+      Left            =   12855
+      TabIndex        =   16
+      Top             =   3780
+      Width           =   1635
+      Begin VB.TextBox Text_MIN 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000080&
+         Height          =   285
+         Left            =   60
+         TabIndex        =   22
+         Text            =   "Min"
+         Top             =   1560
+         Width           =   1095
+      End
+      Begin VB.CheckBox Check_MAX 
+         Caption         =   "Click to change:"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000080&
+         Height          =   255
+         Left            =   60
+         TabIndex        =   19
+         Top             =   240
+         Width           =   1455
+      End
+      Begin VB.TextBox Text_MAX 
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000080&
+         Height          =   285
+         Left            =   60
+         TabIndex        =   18
+         Text            =   "Max"
+         Top             =   840
+         Width           =   1095
+      End
+      Begin VB.Label Label2 
+         Caption         =   "Min"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000080&
+         Height          =   195
+         Left            =   660
+         TabIndex        =   23
+         Top             =   1320
+         Width           =   315
+      End
+      Begin MSForms.SpinButton Spin_MIN 
+         Height          =   615
+         Left            =   1140
+         TabIndex        =   21
+         Top             =   1260
+         Width           =   375
+         Size            =   "661;1085"
+         Max             =   10000
+      End
+      Begin VB.Label Label1 
+         Caption         =   "Max"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000080&
+         Height          =   255
+         Left            =   600
+         TabIndex        =   20
+         Top             =   600
+         Width           =   435
+      End
+      Begin MSForms.SpinButton Spin_MAX 
+         Height          =   615
+         Left            =   1140
+         TabIndex        =   17
+         Top             =   540
+         Width           =   375
+         Size            =   "661;1085"
+         Max             =   10000
+      End
+   End
+   Begin VB.CheckBox Check_UNIT 
+      Caption         =   "Y"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000C0&
+      Height          =   315
+      Left            =   9600
+      Style           =   1  'Graphical
+      TabIndex        =   13
+      ToolTipText     =   "Select first different UNIT from the list and check this button.."
+      Top             =   60
+      Width           =   375
+   End
+   Begin VB.ComboBox Combo_UNIT 
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00000080&
+      Height          =   330
+      Left            =   10440
+      TabIndex        =   12
+      ToolTipText     =   "Select different UNIT from the list."
+      Top             =   60
+      Width           =   1815
+   End
+   Begin VB.Frame Frame7 
+      Caption         =   "Trends charts"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00FF0000&
+      Height          =   3075
+      Left            =   12855
+      TabIndex        =   5
+      Top             =   600
+      Width           =   1635
+      Begin VB.CommandButton Comm_view 
+         Caption         =   "View new period"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   315
+         Left            =   60
+         TabIndex        =   6
+         Top             =   2520
+         Width           =   1515
+      End
+      Begin MSComCtl2.DTPicker DTP_Fine 
+         DataField       =   "Date_Fine"
+         DataSource      =   "Data1"
+         Height          =   255
+         Left            =   120
+         TabIndex        =   7
+         Top             =   1980
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   450
+         _Version        =   393216
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Format          =   57540609
+         CurrentDate     =   37770
+      End
+      Begin MSComCtl2.DTPicker DTP_Inizio 
+         DataField       =   "Date_Inizio"
+         DataSource      =   "Data1"
+         Height          =   315
+         Left            =   120
+         TabIndex        =   8
+         Top             =   1380
+         Width           =   1335
+         _ExtentX        =   2355
+         _ExtentY        =   556
+         _Version        =   393216
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         CustomFormat    =   "01/01/01"
+         Format          =   57540609
+         CurrentDate     =   37770
+         MinDate         =   36526
+      End
+      Begin VB.Label Label37 
+         Caption         =   "Start date:"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000080&
+         Height          =   195
+         Left            =   60
+         TabIndex        =   11
+         Top             =   1200
+         Width           =   1215
+      End
+      Begin VB.Label Label38 
+         Caption         =   "End date:"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000080&
+         Height          =   195
+         Left            =   60
+         TabIndex        =   10
+         Top             =   1800
+         Width           =   1215
+      End
+      Begin VB.Label Label36 
+         Alignment       =   2  'Center
+         Caption         =   "Select the desired period for the trend chart"
+         BeginProperty Font 
+            Name            =   "Arial"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H00000080&
+         Height          =   795
+         Left            =   120
+         TabIndex        =   9
+         Top             =   300
+         Width           =   1335
+      End
+   End
+   Begin VB.TextBox Text2 
+      BackColor       =   &H8000000F&
+      DataField       =   "UNIT_Z"
+      DataSource      =   "Data1"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000C0&
+      Height          =   315
+      Left            =   7320
+      Locked          =   -1  'True
+      TabIndex        =   4
+      Top             =   60
+      Width           =   1755
+   End
+   Begin VB.TextBox Text1 
+      Alignment       =   1  'Right Justify
+      Appearance      =   0  'Flat
+      BackColor       =   &H8000000F&
+      BorderStyle     =   0  'None
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00000080&
+      Height          =   285
+      Index           =   5
+      Left            =   6720
+      TabIndex        =   3
+      Text            =   "Unit:"
+      Top             =   120
+      Width           =   555
+   End
+   Begin VB.CheckBox Check1 
+      Caption         =   "2D LINE / 3D BAR View"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   315
+      Left            =   1980
+      Style           =   1  'Graphical
+      TabIndex        =   2
+      Top             =   60
+      Width           =   1995
+   End
+   Begin MSComctlLib.TabStrip TabStrip1 
+      Height          =   375
+      Left            =   -60
+      TabIndex        =   1
+      Top             =   0
+      Width           =   3375
+      _ExtentX        =   5953
+      _ExtentY        =   661
+      Style           =   1
+      HotTracking     =   -1  'True
+      MultiSelect     =   -1  'True
+      Placement       =   1
+      Separators      =   -1  'True
+      _Version        =   393216
+      BeginProperty Tabs {1EFB6598-857C-11D1-B16A-00C0F0283628} 
+         NumTabs         =   3
+         BeginProperty Tab1 {1EFB659A-857C-11D1-B16A-00C0F0283628} 
+            Caption         =   "Close"
+            Object.ToolTipText     =   "Close this form"
+            ImageVarType    =   2
+         EndProperty
+         BeginProperty Tab2 {1EFB659A-857C-11D1-B16A-00C0F0283628} 
+            Caption         =   "Print"
+            Object.ToolTipText     =   "Print this graph"
+            ImageVarType    =   2
+         EndProperty
+         BeginProperty Tab3 {1EFB659A-857C-11D1-B16A-00C0F0283628} 
+            Caption         =   "Update"
+            Object.ToolTipText     =   "Update last changes"
+            ImageVarType    =   2
+         EndProperty
+      EndProperty
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+   End
+   Begin MSChart20Lib.MSChart MSChart_CF 
+      Height          =   6555
+      Left            =   120
+      OleObjectBlob   =   "Chart_CF.frx":0000
+      TabIndex        =   0
+      Top             =   1200
+      Width           =   11295
+   End
+   Begin VB.Label Lab_Unit 
+      Alignment       =   1  'Right Justify
+      Caption         =   "Unit:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H00004080&
+      Height          =   195
+      Left            =   10020
+      TabIndex        =   28
+      Top             =   120
+      Width           =   435
+   End
+   Begin VB.Label Lab_NEW 
+      Alignment       =   1  'Right Justify
+      Caption         =   "---> "
+      BeginProperty Font 
+         Name            =   "Arial Black"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000FF&
+      Height          =   255
+      Left            =   10020
+      TabIndex        =   15
+      Top             =   120
+      Width           =   435
+   End
+   Begin VB.Label Lab_Default 
+      Caption         =   "<----"
+      BeginProperty Font 
+         Name            =   "Arial Black"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ForeColor       =   &H000000FF&
+      Height          =   255
+      Left            =   9120
+      TabIndex        =   14
+      Top             =   120
+      Width           =   435
+   End
+End
+Attribute VB_Name = "Chart_CF"
+Attribute VB_GlobalNameSpace = False
+Attribute VB_Creatable = False
+Attribute VB_PredeclaredId = True
+Attribute VB_Exposed = False
+Public www
+
+Private Sub Check_UNIT_Click()
+If Check_UNIT = Unchecked Then
+    Lab_Unit.Visible = True
+    Lab_Default.Visible = True
+    Lab_NEW.Visible = False
+Else
+    Lab_Unit.Visible = False
+    Lab_Default.Visible = False
+    Lab_NEW.Visible = True
+End If
+    Call chart
+End Sub
+
+Private Sub Check1_Click()
+    Call chart
+End Sub
+
+Private Sub Combo_UNIT_LostFocus()
+    Call chart
+End Sub
+
+Private Sub Comm_view_Click()
+    Call chart
+End Sub
+
+Private Sub Form_Load()
+    On Error Resume Next
+   Width = frmMain.Width * 0.98 ' Imposta la larghezza del form.
+   Height = frmMain.Height * 0.89     ' Imposta l'altezza del form.
+   Left = 50 '(frmMain.Width - Width) / 2 ' Centra il form orizzontalmente.
+   Top = 0 '(frmMain.Height - Height) / 2 ' Centra il form verticalmente.
+    
+    Dim Rs2 As Recordset
+    Data2.DatabaseName = "C:\Condensers\Database\steam.mdb"
+    Data2.RecordSource = "Select * From [Query_Unit]"
+    Data2.Refresh
+    Set Rs2 = Data2.Recordset
+    If Rs2.RecordCount > 0 Then
+       Do Until Rs2.EOF
+            UUU1 = Data2.Recordset.Unit_name
+                Combo_UNIT.AddItem UUU1
+            Rs2.MoveNext
+    Loop
+    Else
+       MsgBox "No Units found"
+    End If
+
+    Lab_Default.Visible = True
+    Lab_NEW.Visible = False
+
+Call chart
+End Sub
+
+Private Sub Spin_MAX_Change()
+    MM2 = Spin_MAX.Value
+    Text_MAX.Text = Spin_MAX
+    Call chart
+End Sub
+Private Sub Spin_MIN_Change()
+    Min = Spin_MIN.Value
+    Text_MIN.Text = Spin_MIN
+    Call chart
+End Sub
+
+Private Sub TabStrip1_Click()
+On Error Resume Next
+    If TabStrip1.SelectedItem = "Print" Then
+        Me.PrintForm
+    ElseIf TabStrip1.SelectedItem = "Close" Then
+        Unload Me
+    ElseIf TabStrip1.SelectedItem = "Update" Then
+        Data1.UpdateRecord
+        Data1.Recordset.Bookmark = Data1.Recordset.LastModified
+        Call chart
+    End If
+End Sub
+Private Sub Data1_Error(DataErr As Integer, Response As Integer)
+  'Posizione per il codice di gestione degli errori
+  'Se si desidera ignorare gli errori, impostare come commento la riga successiva
+  'Se si desidera intercettarli, aggiungere qui il codice di gestione
+  MsgBox "Intercettato errore dei dati:" & Error$(DataErr)
+  Response = 0  'Ignora l'errore
+End Sub
+Private Sub Data1_Reposition()
+  Screen.MousePointer = vbDefault
+  On Error Resume Next
+  'Visualizza la posizione del record corrente
+  'per Recordset di tipo Dynaset e Snapshot
+  Data1.Caption = "Record: " & (Data1.Recordset.AbsolutePosition + 1)
+  'Per l'oggetto tabella è necessario impostare la proprietà Index
+  'al momento della creazione del Recordset e utilizzare la riga seguente
+  'Data1.Caption = "Record: " & (Data1.Recordset.RecordCount * (Data1.Recordset.PercentPosition * 0.01)) + 1
+
+End Sub
+Private Sub chart()
+Dim CX(10000, 12), SY(10000, 12), LE(12), ET(10000), C, R, ETX(10000)
+
+    Dim Rs1 As Recordset
+    Data1.DatabaseName = "C:\Condensers\Database\steam.mdb"
+    Data1.RecordSource = "Select * From [Table1]"
+    Data1.Refresh
+    Set Rs1 = Data1.Recordset
+'    CONTO = Rs1.RecordCount
+    www = 0
+    XXX = 0
+    INIZIO = Data1.Recordset.Date_Inizio
+    FINE = Data1.Recordset.Date_Fine
+    DTP_Inizio.Value = INIZIO
+    DTP_Fine.Value = FINE
+    If Rs1.RecordCount > 0 Then
+       Do Until Rs1.EOF
+            If Check_UNIT = Checked And Combo_UNIT.Text <> "" Then
+                Lab_Unit.Visible = False
+                UUU1 = Combo_UNIT.Text
+                PPP1 = Data1.Recordset.Plant
+            Else
+                Lab_Unit.Visible = True
+                Lab_Default.Visible = True
+                Lab_NEW.Visible = False
+                UUU1 = Data1.Recordset.UNIT_Z
+                Plant_N.Text = ""
+            End If
+            
+            UUU2 = Data1.Recordset.Unit_name
+            If UUU1 = UUU2 Then
+                www = www + 1
+                Plant_N.Text = PPP1
+                ETX(www) = Data1.Recordset.Date_test
+                    If ETX(www) >= INIZIO And ETX(www) <= FINE Then
+                        XXX = XXX + 1
+                        SY(XXX, 1) = Data1.Recordset.CLEAN
+                        
+                        C_DES = Data1.Recordset.CHECK_DESIGN
+                        If C_DES = "Vero" Then
+                            ET(XXX) = "Design"
+                        Else
+                            ET(XXX) = Data1.Recordset.Date_test
+                        End If
+                    End If
+            End If
+            Rs1.MoveNext
+        Loop
+    Else
+       MsgBox "No Units found"
+    End If
+    Data1.Recordset.MoveFirst
+
+With MSChart_CF
+        .Width = 12700
+        .Height = 8500
+        .Top = 500
+        .Left = 100
+        If Check1 = Checked Then
+            .chartType = VtChChartType2dLine
+        ElseIf Check1 = Unchecked Then
+            .chartType = VtChChartType3dBar
+        End If
+        .ColumnCount = XXX
+        .RowCount = 1
+             With MSChart_CF.Plot
+                  .AngleUnit = VtAngleUnitsDegrees
+                  .Projection = VtProjectionTypeOrthogonal
+                  .Axis(VtChAxisIdY).CategoryScale.Auto = False
+                  .Axis(VtChAxisIdY).ValueScale.Minimum = 0
+                  
+              MM2 = 0
+              MM1 = 0
+              For i = 1 To XXX
+                      For j = 1 To 1
+                      MM2 = MM1
+                      MM1 = SY(i, j)
+                      If MM1 > MM2 Then
+                          MM2 = MM1
+                          MM1 = MM2
+                      Else
+                          MM1 = MM2
+                      End If
+                      Next j
+              Next i
+              
+              If Check_MAX = Unchecked Then
+                    MM2 = Int(MM2 / 50 + 1) * 50
+                    Min = 0
+                    Spin_MAX.Value = MM2
+                    Spin_MIN.Value = Min
+                Else
+                    MM2 = Spin_MAX
+                    Min = Spin_MIN
+              End If
+                  .Axis(VtChAxisIdY).ValueScale.Maximum = Format(MM2, "0.00")
+                  .Axis(VtChAxisIdY).ValueScale.Minimum = Min
+                  .Axis(VtChAxisIdY).ValueScale.MajorDivision = 5
+                  .Axis(VtChAxisIdY).ValueScale.MinorDivision = 2
+                  .DepthToHeightRatio = 1.5
+                  .WidthToHeightRatio = 1.5
+                  .xGap = 0.8
+                  .zGap = 0.8
+            End With
+           
+       LE(1) = "CF"
+       
+        For C = 1 To XXX
+           R = 1
+                .Column = C
+                .Row = R
+                If SY(C, R) > 0 Then
+                    .Data = SY(C, R)
+                Else
+                    .Data = 0
+                End If
+                .ColumnLabel = ET(C)
+                .RowLabel = LE(R)
+        Next C
+  
+   End With
+End Sub
+
+

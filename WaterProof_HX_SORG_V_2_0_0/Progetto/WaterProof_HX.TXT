@@ -1,0 +1,5 @@
+Il file .cab dell'applicazione è stato creato come 'C:\Documents and Settings\Gianfranco\Documenti\Visual Studio Projects nuovi\WaterProof_HX_SORG_V_2_0_0\Progetto\Pacchetto\WaterProof_HX.CAB'.
+
+Nella directory di supporto (C:\Documents and Settings\Gianfranco\Documenti\Visual Studio Projects nuovi\WaterProof_HX_SORG_V_2_0_0\Progetto\Pacchetto\Support\WaterProof_HX.BAT) è inoltre disponibile un file batch che consente di ricreare il file .cab se vengono apportate modifiche a uno o più file.
+
+Nel pacchetto di installazione è stato incluso il file Mdac_typ.exe. Se il pacchetto verrà installato in un sistema Windows 95/98, dovrà essere installato in modo appropriato DCOM98.
